@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GetScheduleData" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52834/CustomReportMobile/GetScheduleData.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52834/CustomReportMobile/GetScheduleData.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGetScheduleData_GetJsonScheduleData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonScheduleData" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_GetJsonScheduleData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonScheduleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_GetReportRec_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportRec" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_GetReportRec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportRecResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_GetQusttype_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQusttype" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_GetQusttype_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQusttypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_CheckIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIn" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_CheckIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_CheckOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOut" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_CheckOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_SaveReportSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveReportSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IGetScheduleData_SaveReportSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveReportScheduleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGetScheduleData">
+    <wsdl:operation name="GetJsonScheduleData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetScheduleData/GetJsonScheduleData" message="tns:IGetScheduleData_GetJsonScheduleData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetScheduleData/GetJsonScheduleDataResponse" message="tns:IGetScheduleData_GetJsonScheduleData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportRec">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetScheduleData/GetReportRec" message="tns:IGetScheduleData_GetReportRec_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetScheduleData/GetReportRecResponse" message="tns:IGetScheduleData_GetReportRec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQusttype">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetScheduleData/GetQusttype" message="tns:IGetScheduleData_GetQusttype_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetScheduleData/GetQusttypeResponse" message="tns:IGetScheduleData_GetQusttype_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetScheduleData/CheckIn" message="tns:IGetScheduleData_CheckIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetScheduleData/CheckInResponse" message="tns:IGetScheduleData_CheckIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetScheduleData/CheckOut" message="tns:IGetScheduleData_CheckOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetScheduleData/CheckOutResponse" message="tns:IGetScheduleData_CheckOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReportSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGetScheduleData/SaveReportSchedule" message="tns:IGetScheduleData_SaveReportSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGetScheduleData/SaveReportScheduleResponse" message="tns:IGetScheduleData_SaveReportSchedule_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="GetScheduleData" />
+</wsdl:definitions>

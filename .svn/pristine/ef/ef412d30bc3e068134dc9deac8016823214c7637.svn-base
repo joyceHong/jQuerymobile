@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <!--
+    For a description of web.config changes for .NET 4.5 see http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.5" />
+      </system.Web>
+  -->
+  <system.web>
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime requestValidationMode="2.0" />
+    <pages controlRenderingCompatibilityVersion="4.0" clientIDMode="AutoID" />
+    <customErrors mode="Off" />
+  </system.web>
+  <system.serviceModel>
+    <services>
+      <service behaviorConfiguration="serviceBehavior" name="GetScheduleData">
+        <endpoint behaviorConfiguration="webHttpBehavior" binding="webHttpBinding" bindingConfiguration="" contract="IGetScheduleData">
+          <identity>
+            <dns value="localhost" />
+          </identity>
+        </endpoint>       
+      </service>
+    </services>
+    <bindings />
+    <client />
+    <behaviors>
+      <endpointBehaviors>
+        <behavior name="webHttpBehavior">
+          <webHttp />
+        </behavior>
+      </endpointBehaviors>
+      <serviceBehaviors>
+        <behavior name="serviceBehavior">
+          <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" />
+          <serviceDebug includeExceptionDetailInFaults="false" />
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
+  </system.serviceModel>
+    <connectionStrings>
+      <!--<add name="TCS" connectionString="server=61.219.132.198;database=TCS;user id=asuser;password=asusernet" providerName="System.Data.SqlClient" />-->
+      <add name="TCS" connectionString="server=RDPC01\MSSQL2008;database=TCS;user id=sa;password=1" providerName="System.Data.SqlClient" />
+    </connectionStrings>
+</configuration>
